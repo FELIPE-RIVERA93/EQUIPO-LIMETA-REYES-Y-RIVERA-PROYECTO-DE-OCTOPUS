@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content = "text/html" charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="Octopus.css">
+	<title>PAGINA OFICIAL DE OCTOPUS </title>
+</head>
+
+<style>
+	 #Div1{
+            background-color: black;
+            text-align:center;"
+         }
+    #Div2{
+            border: 1px solid white;
+            position:relative;
+         }
+
+ .carousel-inner > .item > img,
+ .carousel-inner > .item > a > img {
+      width:30%;
+      margin:auto;
+  }
+  .Trans{ 
+    position:relative;
+    top: 0;
+    left: 0;
+    width: 45%;
+    height: 45%;
+    background-color:rgba(0,0,0,0.5);
+  }
+
+  body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+#Inicio:hover{
+  	color:red;
+}
+#Conocenos:hover{
+  	color:red;
+}
+#Loquehacemos:hover{
+  	color:red;
+}
+#Diseños:hover{
+	color:red;
+}
+#Clientes:hover{
+	color:red;
+}
+
+#Sesión:hover{
+	color:red;
+}
+#Servicios:hover{
+	color:red;
+}
+#Cliente:hover{
+	color:red;
+}
+#Contacto:hover{
+	color:red;
+}
+.Uno{
+	background-color:brown;
+	position: relative;
+	width: 300px;
+}
+</style>
+
+<!--INICIA EL CUERPO DE LA PAGINA-->
+<body>
+<!--MENU-->
+	<nav id = "barra" class = "navbar navbar-default" border = "red">
+      <div = "container-fluid">
+        <div class = "navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class = "navbar-brand">
+          
+          </a>
+          
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <!--barra lateral-->
+            <div id="mySidenav" class="sidenav">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <a id="Sesión" href="#" onclick = "abrirsesion()"">Sesión</a>
+              <a id="Servicios" href="#">Servicios</a>
+              <a id="Cliente" href="#" onclick = "abrirclientes()"">Clientes</a>
+              <a id="Contacto" href="#">Contacto</a>
+            </div>
+
+            <div id="main">
+              <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            </div>
+
+            <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById("main").style.marginLeft= "0";
+            }
+            </script>
+          <!--termina la barra lateral-->
+            </li>
+
+            <li class="dropdown">
+              <a class = "navbar-brand">
+               <b id = "colortxt">Oc</b><b>to pus</b></a>    
+            </li>
+
+            <li class="dropdown">
+              <a id="Inicio" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inicio<span></span></a>
+            </li>
+
+             <li class="dropdown">
+              <a id="Conocenos" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onclick = "abrirModal()">Conocenos<span></span></a> 
+            </li>
+
+            <li class="dropdown">
+              <a id="Loquehacemos" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onclick ="abrirModal1()">Lo Qué Hacemos<span></span></a>
+            </li><li class="dropdown">
+              <a id="Frecuentes" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"onclick ="abrirfrecuentes()">Clientes Frecuentes<span></span></a>
+            </li>
+
+
+            <!--CONSULTA-->
+            <li class="dropdown">
+              <a href="mostrarregistro.php" target = "_blank">Consultas<span></span></a>
+            </li>
+
+          <!--HACEMOS LA CAJA DE ENTRADA DE TEXTO-->
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Buscar">
+            </div>
+            <button type="submit" class="btn btn-default">Buscar</button>
+          </form>
+       </ul>
+        </div>
+      </div>
+    </nav>
+<!--FIN CODIGO ANTERIOR-->
+
+<!--INICIA EL CODIGO DEL DIV QUE CONTIENE LA FRASE DE LA EMPRESA-->
+<div class="container-fluid" style="margin-top: -20PX; margin-left:20px;">
+    <img src="imagenes/Captura.jpg" class="img-responsive" alt="Imagen responsiva" width="100%" height="647px" id="Fondo1"></img>
+</div>
+
+<div class="Uno">
+</div>
+
+<!--CARGO UNA IMAGEN DE FONDO PARA MOSTRAR LA MISION Y VISION Y VALORES-->
+ <div class = "container-fluid" style= "margin-top:-10PX; margin-left:0px";>
+    <div class ="row">
+    <img src="imagenes/img12.png" class="img-responsive" alt="Imagen responsiva" width="500%" height="990px"></img>
+    <div>
+	    <div style="left:100px;top:930px;margin-top:-10px; margin-left:50px;position: absolute;float:right; width:290px;height:290px; 
+	    	background-color:rgba(104,59,16,0.5);">
+	    	<div style="font-size:15px;font-family:verdana;text-align:center; color:rgb(255,255,255);"><br>MISIÓN</br> 
+	    	<br> SER LA MEJOR EMPRESA EN EL MERCADO,CON EL OBJETIVO DE SIEMPRE BRINDARLE
+	             A NUESTROS CLIENTES SOLUCIONES VISUALES,ASÍ COMO SATISFACCIÓN CON NUESTRO TRABAJO.
+	        </br>
+			</div>
+		</div> 
+    </div>
+    <div>
+    	<div style="left:490px;top:930px;margin-top:-10px; margin-left:50px;position: absolute;float:right; width:290px;height:290px; 
+    	background-color:rgba(100,0,0,0.5);">
+    		<div style="font-size:15px;font-family:verdana;text-align:center;left:490px;top:930px;color:rgb(255,255,255);"><br>VISIÓN</br> 
+    			<br>CONVERTIRNOS EN UNA FRANQUICIA DESTACADA POR OFRECER SERVICIOS 	DE ALTA CALIDAD
+               		 AL PÚBLICO EN GENERAL, ASÍ COMO AL SECTOR PRIVADO.
+				</br>
+    		</div>
+    	</div>
+    </div>
+    <div>
+    	<div style="left:890px;top:930px;margin-top:-10px; margin-left:50px;position: absolute;float:right; width:290px;height:290px; background-color:rgba(131,131,131,0.5);">
+    	<div style="font-size:15px;font-family:verdana;text-align:center;left:890px;top:930px; color:rgb(255,255,255);"><br>VALORES</br>
+    		 <br>ÉTICA</br>
+    		 <br>HONESTIDAD</br>
+    		 <br>CREATIVIDAD</br>
+    		 <br>CALIDAD</br>
+    		 <br>PUNTUALIDAD</br>
+             <br>PROFESIONALISMO</br>
+    	</div>
+    	</div>
+    </div>
+</div>
+</div>
+<!--FIN DE INFORMACIÓN-->
+
+<!--SECCION DE MODALES-->
+    <div class = "modal fade"
+       id = "conocenos"
+       role = "dialog"
+       aria-hidden = "true"
+       data-backdrop = "static"
+       data-keyboard = "false">
+       <div class="modal-dialog">
+
+        <div id = "contenidoModal" class = "modal-content">
+      </div>
+    </div>
+  </div>
+
+  <div class = "modal fade"
+       id = "loquehacemos"
+       role = "dialog"
+       aria-hidden = "true"
+       data-backdrop = "static"
+       data-keyboard = "false">
+       <div class="modal-dialog">
+
+        <div id = "contenidoModal1" class = "modal-content">
+      </div>
+    </div>
+  </div>
+
+    <div class = "modal fade"
+       id = "Diseños"
+       role = "dialog"
+       aria-hidden = "true"
+       data-backdrop = "static"
+       data-keyboard = "false">
+       <div class="modal-dialog">
+
+        <div id = "contenidoModal2" class = "modal-content">
+      </div>
+    </div>
+  </div>
+
+  <div class = "modal fade"
+       id = "Clientes"
+       role = "dialog"
+       aria-hidden = "true"
+       data-backdrop = "static"
+       data-keyboard = "false">
+       <div class="modal-dialog">
+
+        <div id = "contenidoModal3" class = "modal-content">
+      </div>
+    </div>
+  </div>
+
+
+  <div class = "modal fade"
+       id = "Organigrama"
+       role = "dialog"
+       aria-hidden = "true"
+       data-backdrop = "static"
+       data-keyboard = "false">
+       <div class="modal-dialog">
+
+        <div id = "contenidoModal4" class = "modal-content">
+      </div>
+    </div>
+  </div>
+
+  <div class = "modal fade"
+       id = "Loginoctopus"
+       role = "dialog"
+       aria-hidden = "true"
+       data-backdrop = "static"
+       data-keyboard = "false">
+       <div class="modal-dialog">
+
+        <div id = "contenidoModallogin" class = "modal-content">
+      </div>
+    </div>
+  </div>
+
+
+  
+<!--Esto es del cliente-->
+ <div class = "modal fade"
+       id = "modalclientes"
+       role = "dialog"
+       aria-hidden = "true"
+       data-backdrop = "static"
+       data-keyboard = "false">
+       <div class="modal-dialog">
+
+        <div id = "contenidoModalclientes" class = "modal-content">
+      </div>
+    </div>
+  </div>
+
+  <div class = "modal fade"
+       id = "modalfrecuentes"
+       role = "dialog"
+       aria-hidden = "true"
+       data-backdrop = "static"
+       data-keyboard = "false">
+       <div class="modal-dialog">
+
+        <div id = "contenidoModalfrecuentes" class = "modal-content">
+      </div>
+    </div>
+  </div>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<!--TERMINA MODALES-->
+  </div>
+
+ </div>
+ <footer>
+      <right id ="texto"><a>Octopus</a></left>
+ </footer>
+ <footer>
+      <right id ="texto"><a>Buro de Servicios Graficos</a></center>
+ </footer>
+ <footer>
+      <right id ="texto"><a>Relvolucion Zona Centro, Irapuato Gto.</a></right>
+ </footer>
+  
+  <!--Termina ubicacion-->
+  <!--Pie de Pagina-->
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/registrocliente.js" type="text/javascript" ></script>
+<script src="js/registrologin.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+    function abrirModal(){
+      $("#conocenos").modal("show");
+      $("#contenidoModal").load("llamada.html");
+    }
+    function cerrarModal(){
+      $("#conocenos").modal("hide");
+    }
+
+
+
+    function abrirModal1(){
+      $("#loquehacemos").modal("show");
+      $("#contenidoModal1").load("llamada1.html");
+    }
+    function cerrarModal1(){
+      $("#loquehacemos").modal("hide");
+    }
+
+
+
+    function abrirModal2(){
+      $("#Diseños").modal("show");
+      $("#contenidoModal2").load("llamada3.html");
+    }
+    function cerrarModal2(){
+      $("#Diseños").modal("hide");
+    }
+    function abrirModal3(){
+      $("#Clientes").modal("show");
+      $("#contenidoModal3").load("llamada4.html");
+    }
+    function cerrarModal3(){
+      $("#Clientes").modal("hide");
+    }
+
+
+     function abrirModal5(){
+      $("#Organigrama").modal("show");
+      $("#contenidoModal4").load("llamada6.html");
+    }
+    function cerrarModal5(){
+      $("#Organigrama").modal("hide");
+    }
+
+     
+    <!--Modal para abrir login-->
+     function abrirsesion(){
+      $("#Loginoctopus").modal("show");
+      $("#contenidoModallogin").load("registrologin.php");
+    }
+    function cerrarsesion(){
+      $("#Loginoctopus").modal("hide");
+    }
+
+
+    <!--funcion de cliente-->
+     function abrirclientes(){
+      $("#modalclientes").modal("show");
+      $("#contenidoModalclientes").load("registrocliente.php");
+    }
+    function cerrarclientes(){
+      $("#modalclientes").modal("hide");
+    }
+
+
+    <!--clientes frecuentes-->
+    function abrirfrecuentes(){
+      $("#modalfrecuentes").modal("show");
+      $("#contenidoModalfrecuentes").load("logos.html");
+    }
+    function cerrarfrecuentes(){
+      $("#modalfrecuentes").modal("hide");
+    }
+    <!--cerrar clientes frecuentes-->
+
+    
+</script>
+</body>
+</html>
